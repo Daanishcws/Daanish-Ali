@@ -100,7 +100,7 @@
      * color-2(#F06000)
      */
     --color-1: hsla(182, 82%, 38%, 1);
-    --color-2: hsla(24, 100%, 47%, 1);
+    --color-2: rgb(22, 189, 13);
 
     /* theme color variations
      */
@@ -2555,19 +2555,38 @@ input[type="button"].btn--primary:focus {
 /* ------------------------------------------------------------------- 
  * ## skillbars
  * ------------------------------------------------------------------- */
-.skill-bars-fat {
+ 
+
+ .skill-bars-fat {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
     list-style: none;
+    padding: 0;
     margin: var(--vspace-2) 0 var(--vspace-1);
 }
 
 .skill-bars-fat li {
-    height: 5.2rem;
-    background: transparent;
-    margin-bottom: 5.2rem;
-    padding: 0;
+    flex-basis: calc(50% - 20px); /* Adjusted flex-basis for side-by-side display */
+    margin: 10px;
+    min-width: 150px;
+    max-width: 300px;
     position: relative;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
+
+.skill-bars-fat li .progress {
+    position: relative;
+    background: var(--color-gray-3);
+    width: 100%;
+    height: 20px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
 
 .skill-bars-fat li strong {
     font-family: var(--font-1);
@@ -2576,115 +2595,56 @@ input[type="button"].btn--primary:focus {
     text-transform: uppercase;
     letter-spacing: .2em;
     font-size: calc(var(--text-size) * 0.7778);
-    line-height: 2rem;
-    top: -3.2rem;
-    left: 0;
-    flex-grow: 1;
+    line-height: 1.4;
     text-align: center;
-    
+    margin: 10px 0; /* Adjusted for spacing above and below the text */
 }
 
-.skill-bars-fat li .progress {
-    background: var(--color-gray-3);
-    position: relative;
-    height: 100%;
-    border-radius: 3px;
-    overflow: hidden;
-    position: relative;
-}
-
-.skill-bars-fat li strong {
-    color: red; /* Change the color here */
+.skill-bars-fat li .progress .percentage-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: var(--color-text-dark);
+    font-weight: bold;
+    line-height: 20px; /* Match the height of the progress bar to vertically center the text */
+    z-index: 2; /* Ensure the text is above the progress bar's colored part */
 }
 
 .skill-bars-fat li .progress::before {
-    content: "";
+    content: attr(data-percentage); /* To show the percentage dynamically */
+    position: absolute;
+    top: 0;
+    left: 0;
     display: block;
     height: 100%;
     background-color: var(--color-gray-18);
     width: 0;
     transition: width 0.5s ease;
+    z-index: 1; /* Lower z-index to be below the text */
 }
-
-.skill-bars-fat li .percent5::before {
-    width: 5%;
-}
-
-.skill-bars-fat li .percent10::before {
-    width: 10%;
-}
-
-.skill-bars-fat li .percent15::before {
-    width: 15%;
-}
-
-.skill-bars-fat li .percent20::before {
-    width: 20%;
-}
-
-.skill-bars-fat li .percent25::before {
-    width: 25%;
-}
-
-.skill-bars-fat li .percent30::before {
-    width: 30%;
-}
-
-.skill-bars-fat li .percent35::before {
-    width: 35%;
-}
-
-.skill-bars-fat li .percent40::before {
-    width: 40%;
-}
-
-.skill-bars-fat li .percent45::before {
-    width: 45%;
-}
-
-.skill-bars-fat li .percent50::before {
-    width: 50%;
-}
-
-.skill-bars-fat li .percent55::before {
-    width: 55%;
-}
-
-.skill-bars-fat li .percent60::before {
-    width: 60%;
-}
-
-.skill-bars-fat li .percent65::before {
-    width: 65%;
-}
-
-.skill-bars-fat li .percent70::before {
-    width: 70%;
-}
-
-.skill-bars-fat li .percent75::before {
-    width: 75%;
-}
-
-.skill-bars-fat li .percent80::before {
-    width: 80%;
-}
-
-.skill-bars-fat li .percent85::before {
-    width: 85%;
-}
-
-.skill-bars-fat li .percent90::before {
-    width: 90%;
-}
-
-.skill-bars-fat li .percent95::before {
-    width: 95%;
-}
-
-.skill-bars-fat li .percent100::before {
-    width: 100%;
-}
+/* Progress bar percentages */
+.skill-bars-fat li .percent5::before { width: 5%; }
+.skill-bars-fat li .percent10::before { width: 10%; }
+.skill-bars-fat li .percent15::before { width: 15%; }
+.skill-bars-fat li .percent20::before { width: 20%; }
+.skill-bars-fat li .percent25::before { width: 25%; }
+.skill-bars-fat li .percent30::before { width: 30%; }
+.skill-bars-fat li .percent35::before { width: 35%; }
+.skill-bars-fat li .percent40::before { width: 40%; }
+.skill-bars-fat li .percent45::before { width: 45%; }
+.skill-bars-fat li .percent50::before { width: 50%; }
+.skill-bars-fat li .percent55::before { width: 55%; }
+.skill-bars-fat li .percent60::before { width: 60%; }
+.skill-bars-fat li .percent65::before { width: 65%; }
+.skill-bars-fat li .percent70::before { width: 70%; }
+.skill-bars-fat li .percent75::before { width: 75%; }
+.skill-bars-fat li .percent80::before { width: 80%; }
+.skill-bars-fat li .percent85::before { width: 85%; }
+.skill-bars-fat li .percent90::before { width: 90%; }
+.skill-bars-fat li .percent95::before { width: 95%; }
+.skill-bars-fat li .percent100::before { width: 100%; }
 
 /* ------------------------------------------------------------------- 
  * ## alert box
