@@ -99,7 +99,7 @@
     /* color-1(#11ABB0)
      * color-2(#F06000)
      */
-    --color-1: hsla(182, 82%, 38%, 1);
+    --color-1: rgb(22, 189, 13);
     --color-2: rgb(22, 189, 13);
 
     /* theme color variations
@@ -1199,7 +1199,7 @@ input[type="password"], textarea {
         -ms-flex: 0 0 91.66667%;
         -webkit-box-flex: 0;
         flex: 0 0 91.66667%;
-        max-width: 91.66667%;
+        max-width: 91.66667%; 
     }
     .mob-12 {
         -ms-flex: 0 0 100%;
@@ -2325,7 +2325,7 @@ input[type="reset"].btn--primary,
 input[type="button"].btn--primary {
     background: var(--color-btn-primary);
     border-color: var(--color-btn-primary);
-    color: var(--color-btn-primary-text);
+    color: black;
 }
 
 .btn.btn--primary:hover, 
@@ -3492,6 +3492,10 @@ input[type="button"].btn--primary:focus {
     color: white;
 }
 
+.s-hero__content h3 a:hover {
+    color: rgb(22, 189, 13);
+}
+
 .s-hero__content h3::after {
     display: block;
     content: "";
@@ -3529,7 +3533,7 @@ input[type="button"].btn--primary:focus {
 
 .s-hero__content-social a:hover, 
 .s-hero__content-social a:focus {
-    color: var(--color-2-light);
+    color: rgb(22, 189, 13);
 }
 
 .s-hero__content-social a:last-child {
@@ -3777,8 +3781,8 @@ input[type="button"].btn--primary:focus {
 }
 
 .s-about__content-bottom .btn--download {
-    background-color: white;
-    border-color: white;
+    background-color: rgb(22, 189, 13);
+    border-color: rgb(22, 189, 13);
     color: black;
     margin-right: 0;
 }
@@ -4679,4 +4683,14 @@ input[type="button"].btn--primary:focus {
     .s-footer__social li {
         margin-right: 1.4rem;
     }
+}
+
+/* Color for link to LinkedIn */
+
+.linkedin-link {
+    color: rgb(57, 212, 57); /* Default color */
+}
+
+.linkedin-link:hover {
+    color: black; /* Color on hover */
 }
