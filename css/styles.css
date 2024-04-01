@@ -1,7 +1,4 @@
 /* =================================================================== 
- * Ceevee Main Stylesheet
- * Template Ver. 2.0.0
- * 01-03-2021
  * ------------------------------------------------------------------
  *
  * TOC:
@@ -2582,7 +2579,7 @@ input[type="button"].btn--primary:focus {
     position: relative;
     background: var(--color-gray-3);
     width: 100%;
-    height: 20px;
+    height: 30px;
     border-radius: 3px;
     overflow: hidden;
 }
@@ -2608,7 +2605,7 @@ input[type="button"].btn--primary:focus {
     text-align: center;
     color: var(--color-text-dark);
     font-weight: bold;
-    line-height: 20px; /* Match the height of the progress bar to vertically center the text */
+    line-height: 30px; /* Match the height of the progress bar to vertically center the text */
     z-index: 2; /* Ensure the text is above the progress bar's colored part */
 }
 
